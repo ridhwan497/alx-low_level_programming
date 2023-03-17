@@ -3,7 +3,7 @@
 
 /*
 *main - main function
-*Description:program prints all single digit numbers of base 10 starting from 0, followed by a new line.
+*Description - program prints 0-10 followed by a new line.
 *Return: 0
 */
 int main(void)
