@@ -3,11 +3,11 @@
 
 /**
 *main - main function
-*Description: program prints numbers of base 16 in lowercase with putchar 
+*Description: program prints numbers of base 16 in lowercase with putchar
 *Return: 0
 */
 
-int main (void)
+int main(void)
 {
 	int num; /*this is the numbers 0-9*/
 	char c; /*this is for the letters a-f*/
