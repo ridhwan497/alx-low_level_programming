@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 /*
 *main - main function
 *Description - Program prints the alphabet in lowercase
@@ -6,11 +7,11 @@
 */
 int main(void)
 {
-    char lowercase_characters;
-    for (lowercase_characters='a';lowercase_characters<='z';lowercase_characters++)
-    {
-        putchar(lowercase_characters);
+	char lowercase_characters;
+	for (lowercase_characters = 'a' ;lowercase_characters <= 'z'; lowercase_characters ++)
+	{
+		putchar(lowercase_characters);
     }
-    printf("\n");
-    return (0);
+	printf("\n");
+	return (0);
 }
