@@ -10,7 +10,7 @@ int main(void)
 {
 	char reverse; /*this variable is for reversing alphabets*/
 
-	for(reverse = 'z'; reverse >= 'a'; reverse--)
+	for (reverse = 'z'; reverse >= 'a'; reverse--)
 	{
 		putchar(reverse);
 	}
