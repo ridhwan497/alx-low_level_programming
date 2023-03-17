@@ -3,7 +3,7 @@
 
 /*
 *main - main function
-*Description - Program prints 0-10 followed by a new line.
+*Description - Program prints numbers from  0 to 10 without using printf followed by a new line.
 *Return: 0
 */
 int main(void)
