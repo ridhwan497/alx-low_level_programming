@@ -3,16 +3,20 @@
 #include <stdio.h>
 /* more headers goes there */
 
-/* betty style doc for function main goes there */
+/* 
+ *Main Function
+ *This function gets a random number and outputs the number
+ *whether its +ve, -ve or zero
+ */
 int main(void)
 {
 	int n;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	if(n > 0)
+	if (n > 0)
     {
-       printf("%d is positive",n);
+       printf("%d is positve",n);
     }
 	else if (n == 0)
 	{
