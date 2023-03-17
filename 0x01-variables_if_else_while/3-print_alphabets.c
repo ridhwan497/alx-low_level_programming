@@ -2,17 +2,22 @@
 #include <stdlib.h>
 
 /**
- * main - main function
- * Description - Program prints the alphabet in lowercase
- * Return: 0 
- */
+*main - main function
+*Description - Program prints the alphabet in lowercase and uppercase
+*Return: 0 
+*/
 int main(void)
 {
-    char c;
+    char lc;
+    char uc;
 
-    for (c = 'a' ; c <= 'z'; c++)
+    for (lc = 'a' ; lc <= 'z'; lc++)
     {
-        putchar(c);
+        putchar(lc);
+    }
+    for (uc = 'A' ; uc <= 'Z'; uc++)
+    {
+        putchar(uc);
     }
     printf("\n");
     return (0);
