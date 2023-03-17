@@ -5,6 +5,7 @@
 *main - Main Function
 *Description - This function gets a random number and outputs the number
 *whether its +ve, -ve or zero
+*Return: 0
 */
 int main(void)
 {
