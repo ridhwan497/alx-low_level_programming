@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 /**
-*Main Function
-*This function gets a random number and outputs the number
+*main - Main Function
+*Description - This function gets a random number and outputs the number
 *whether its +ve, -ve or zero
 */
 int main(void)
