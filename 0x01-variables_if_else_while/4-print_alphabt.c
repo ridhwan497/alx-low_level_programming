@@ -3,8 +3,8 @@
 
 /**
 *main - main function
-*description - program prints prints alphabets in lowercase except q and e
-*return: 0
+*Description - program prints prints alphabets in lowercase except q and e
+*Return: 0
 */
 int main(void)
 {
