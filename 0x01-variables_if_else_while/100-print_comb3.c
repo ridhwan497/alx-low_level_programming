@@ -1,4 +1,4 @@
-#include <_stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 /**
@@ -30,4 +30,3 @@
 	putchar('\n');
 	return (0);
  }
- 
