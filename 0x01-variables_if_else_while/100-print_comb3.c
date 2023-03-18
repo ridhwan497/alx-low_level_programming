@@ -2,12 +2,12 @@
 #include <stdlib.h>
 
 /**
-*main - main function 
+*main - main function
 *Description: program prints all possible different combinations of two digits
 *Return: 0
 */
- int main(void)
- {
+int main(void)
+{
 	int num1; /*this variable is for the first digit*/
 	int num2; /*this variable is for the second digit*/
 
@@ -29,4 +29,4 @@
 	}
 	putchar('\n');
 	return (0);
- }
+}
