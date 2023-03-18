@@ -9,21 +9,17 @@
 
 int main(void)
 {
-	int number;
+	int num;
 
-	for (number = 0; number < 10; number++)
+	for (num = 0; num < 10; num++)
 	{
-		if (number < 9)
+		putchar(num + '0');
+		if (num < 9)
 		{
-			putchar(number + '0');
 			putchar(',');
 			putchar(' ');
 		}
-		else
-		{
-			putchar(number + '0');
-		}
 	}
 	putchar('\n');
-	return (0);	
+	return (0);
 }
