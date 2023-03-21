@@ -18,7 +18,6 @@ void times_table(void)
 				if (j != 0) /* not first column */
 				{
 					_putchar(' ');
-					_putchar(' ');
 				}
 				_putchar(k + '0'); /* print product */
 			}
