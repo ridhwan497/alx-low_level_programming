@@ -6,8 +6,8 @@ int print_pchar(void)
 	return (0);
 }
 
-void main()
+int main(void)
 {
 	print_pchar();
-	return (0);
+	
 }
