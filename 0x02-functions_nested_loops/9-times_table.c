@@ -17,13 +17,13 @@ void times_table(void)
 			{
 				if (j != 0) /* not first column */
 				{
-					_putchar(' '); /* print space */
+					_putchar(' ');
+					_putchar(' ');
 				}
 				_putchar(k + '0'); /* print product */
 			}
 			else if (k < 100) /* double digit */
 			{
-				_putchar(' '); /* print space */
 				_putchar((k / 10) + '0');/* print tens */
 				_putchar((k % 10) + '0');/* print ones */
 			}
