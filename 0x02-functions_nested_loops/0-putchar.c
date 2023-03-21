@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 /**
  *print_pchar - prints _putchar
  *Description: prints _putchar
@@ -6,7 +6,7 @@
  */
 int print_pchar(void)
 {
-	printf("_putchar\n");
+	_putchar("_putchar\n");
 	return (0);
 }
 /**
