@@ -7,18 +7,20 @@
  */
 void print_to_98(int n)
 {
-	if (n < 98) /* if n is less than 98 */
+	if (n < 98)
 	{
-		for (; n < 98; n++) 
+		while (n < 98)
 		{
 			_putchar(n);
+			n++;
 		}
 	}
 	else if (n > 98)
 	{
-		for (; n > 98; n--)
+		while (n > 98)
 		{
 			_putchar(n);
+			n--;
 		}
 	}
 	_putchar(98);
