@@ -8,6 +8,7 @@
 int print_last_digit(int r)
 {
 	int m;
+
 	if (r < 0) /*if r is -ve*/
 	{
 		m = -1 * (r % 10); /*-1(-35%10)=5*/
