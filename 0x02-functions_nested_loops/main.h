@@ -9,6 +9,7 @@
  */
 
 int _putchar(char c);
+int print_pchar(void);
 void print_alphabet(void);
 
 #endif
