@@ -4,7 +4,7 @@
  * print_times_table - print the n times table, starting with 0
  * Return: void
  */
-void print_times_table(void)
+void times_table(void)
 {
 	int i, j, k; /* i = row, j = column, k = product */
 
