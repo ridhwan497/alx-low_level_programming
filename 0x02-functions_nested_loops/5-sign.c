@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_sign - Returns 1 if +ve, 0 if 0 and -1 if -ve
+ * print_sign - return 1 if +ve, 0 if 0 and -1 if -ve
  * @n: int number
  * Return 0;
  */
