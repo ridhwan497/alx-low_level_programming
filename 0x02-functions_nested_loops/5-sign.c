@@ -2,7 +2,7 @@
 
 /**
  * print_sign - Returns 1 if +ve, 0 if 0 and -1 if -ve
- * @b: int number
+ * @n: int number
  * Return 0;
  */
 int print_sign(int n)
