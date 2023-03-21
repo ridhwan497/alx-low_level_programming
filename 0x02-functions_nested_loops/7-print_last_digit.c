@@ -7,6 +7,17 @@
  */
 int print_last_digit(int r)
 {
-	r = ((r % 10) * 10) + (r % 10);
-	return (r);
+	int m;
+	if (r < 0) /*if r is -ve*/
+	{
+		m = -1 * (r % 10); /*-1(-35%10)=5*/
+		_putchar(m + '0');
+		return (m);
+	}
+	else
+	{
+		m = r % 10;
+		_putchar(m + '0');
+		return (m);
+	}
 }
