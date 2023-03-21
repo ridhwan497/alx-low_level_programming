@@ -1,5 +1,9 @@
 #include <stdio.h>
-
+/**
+ *print_pchar - prints _putchar
+ *Description: prints _putchar
+ *Return: 0
+ */
 int print_pchar(void)
 {
 	printf("_putchar\n");
@@ -9,5 +13,5 @@ int print_pchar(void)
 int main(void)
 {
 	print_pchar();
-	return(0);
+	return (0);
 }
