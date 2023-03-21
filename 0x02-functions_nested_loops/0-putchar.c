@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  *print_pchar - prints _putchar
  *Description: prints _putchar
@@ -6,14 +7,14 @@
  */
 int print_pchar(void)
 {
-	_putchar('_');
-	_putchar('p');
-	_putchar('u');
-	_putchar('t');
-	_putchar('c');
-	_putchar('h');
-	_putchar('a');
-	_putchar('r');
+	char myChar[] = "_putchar";
+	int i;
+
+	while (myChar[i] != '\0')
+	{
+		_putchar(myChar[i]);
+		i++;
+	}
 	_putchar('\n');
 	return (0);
 }
