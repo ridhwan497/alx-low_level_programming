@@ -5,16 +5,7 @@
  *Description: prints the alphabet in lowercase
  *Return: 0
  */
-void print_alphabet()
-{
-	char c;
-	
-	for (c = 'a'; c <= 'z'; c++)
-	{
-		putchar(c);
-	}
-	putchar('\n');
-}
+void print_alphabet(void);
 /**
 *main - main function
 *Description: prints the alphabet in lowercase
@@ -24,4 +15,14 @@ int main(void)
 {
 	print_alphabet();
 	return (0);
+}
+void print_alphabet(void)
+{
+	char c;
+	
+	for (c = 'a'; c <= 'z'; c++)
+	{
+		putchar(c);
+	}
+	putchar('\n');
 }
