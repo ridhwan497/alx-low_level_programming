@@ -9,5 +9,5 @@ int print_pchar(void)
 int main(void)
 {
 	print_pchar();
-	
+	return(0);
 }
