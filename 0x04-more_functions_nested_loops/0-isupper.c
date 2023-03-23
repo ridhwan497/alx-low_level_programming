@@ -13,13 +13,3 @@ int _isupper(int c)
 	else
 		return (0);
 }
-int main(void)
-{
-    char c;
-
-    c = 'A';
-    _putchar(c);
-    c = 'a';
-    _putchar(c);
-    return (0);
-}
