@@ -7,6 +7,7 @@
  * Desc: Header file containing declarations for all functions
  *       used in the 0x04-more_functions_nested_loops
  */
+int _putchar(char c);
 int _isupper(int c);
 
 #endif
