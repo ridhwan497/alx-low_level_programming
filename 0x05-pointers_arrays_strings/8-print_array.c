@@ -9,18 +9,19 @@
  */
 void print_array(int *a, int n)
 {
+	/* declare a counter variable */
 	int i;
 
-	for(i = 0; i < a[i]; i++)
+	/* loop through the array */
+	for (i = 0; i < n; i++)
 	{
-		if (i < n)
+		/* print the current element */
+		printf("%d", a[i]);
+		/* if the current element is not the last element */
+		if (i != n - 1)
 		{
-			printf("%d", a[i]);
-			if (i < n - 1)
-			{
-				printf(", ");
-			}
+			/* print a comma and a space */
+			printf(", ");
 		}
 	}
-	printf("\n");
 }
