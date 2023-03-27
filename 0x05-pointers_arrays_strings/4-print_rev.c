@@ -3,21 +3,20 @@
 /**
  * print_rev - prints a string, in reverse, followed by a new line.
  * @s: pointer to a string
- * Return: Always 0.
+ * Return: Always 0
  */
 void print_rev(char *s)
 {
-	/* Variable declaration*/
-	int i = 0;
-	int j = 0;
+	int i;
 
-	while (s[i] != 0)
+	while (i != '\0')
 	{
 		i++;
 	}
-
-	for ( j = i; j >= 0; j--)
+	while (i >= 0)
 	{
-		_putchar(s[j]);
+		_putchar(s[i]);
+		i--;
 	}
+	_putchar('\n');
 }
