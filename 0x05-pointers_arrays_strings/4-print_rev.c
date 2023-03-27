@@ -18,7 +18,7 @@ void print_rev(char *s)
 		temp = s[rev]; /*store value of s[rev] in temp*/
 		s[rev] = s[len - rev - 1]; /*swap values*/
 		s[len - rev - 1] = temp;
+		_putchar(s[rev]); /*print string*/
 	}
-	_putchar(s[rev]); /*print string*/
 	_putchar('\n'); /*print new line*/
 }
