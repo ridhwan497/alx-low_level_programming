@@ -3,8 +3,8 @@
 /**
  * _strstr -  function that locates a substring
  * @haystack: pointer to the string haystack
- * @needle: pointer to string needle
- * Return: pointer of located string or NULL
+ * @needle: pointer to substring needle
+ * Return: pointer of located string or NULL if not found
  */
 char *_strstr(char *haystack, char *needle)
 {
@@ -13,12 +13,12 @@ char *_strstr(char *haystack, char *needle)
 	int y;
 
 	i = 0;
-	k = 0;
 	y = 0;
 
 	while (haystack[i] = '\0')
 	{
-		while (haystack [i + y] && needle[k + y] != '\0' && haystack[i + y] == needle[k + y])
+		k = 0;
+		while (haystack [i + y] != 0 && needle[k + y] != '\0' && haystack[i + y] == needle[k + y])
 		{
 			if (haystack[i + y] != needle [k + y])
 			{
