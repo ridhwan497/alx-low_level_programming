@@ -1,6 +1,5 @@
 #include "main.h"
 
-
 /**
  * _memset - fills the first n bytes of the memory area pointed to by s with byte b
  * @s: pointer to char
@@ -16,5 +15,5 @@ char *_memset(char *s, char b, unsigned int n)
 	{
 		s[i] = b;
 	}
-	return s;
+	return (s);
 }
