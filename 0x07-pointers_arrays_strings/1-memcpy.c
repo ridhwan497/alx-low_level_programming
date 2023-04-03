@@ -4,7 +4,7 @@
  * memcpy - function copies memory area
  * @dest: pointer to memory area copied to
  * @src: pointer to memory area copied from
- *@n: no of int bytes
+ * @n: no of int bytes
  * Return: dest
  */
 
