@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdio.h>
+
 /**
  * strchr - locates a character in a string
  * @s: string to be searched
@@ -9,15 +9,15 @@
 char *_strchr(char *s, char c)
 {
 
-	while (*s!= '\0')
+	while (*s != '\0')
 	{
 		if (*s == c)
 		{
 			return (s);
 		}
-		else if (*(s+1) == c)
+		else if (* (s + 1) == c)
 		{
-			return (s+1);
+			return (s + 1);
 		}
 		
 		s++;
