@@ -33,6 +33,6 @@ char *_strstr(char *haystack, char *needle)
 		k++;
 		i++;
 	}
-	
+
 	return (0);
 }
