@@ -2,10 +2,10 @@
 
 /**
  * _strpbrk - search a string for any of a set of bytes.
- * @s: pointer to string 's'
+ * @s: string 's'
  * @accept: pointer to string 'accept'
  * Return: pointer to byte in 's' correlating to é bytes in accept 
- * / NULL if no
+ * or NULL if none found.
  */
 char *_strpbrk(char *s, char *accept)
 {
