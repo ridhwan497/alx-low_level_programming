@@ -7,25 +7,25 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
-	int count_s;
-	int count_accept;
-	char *ptr_s;
+	int cs; /*counter for s*/
+	int ca; /*counter for accept*/
+	char *ps; /*pointer for string s*/
 
-	count_s = 0;
+	cs= 0;
 
-	while (s[count_s] != '\0')
+	while (s[cs] != '\0')
 	{
-		count_accept = 0;
-		while (accept[count_accept] != '\0')
+		ca = 0;
+		while (accept[ca] != '\0')
 		{
-			if (accept[count_accept] == s[count_s])
+			if (accept[ca] == s[cs])
 			{
-				ptr_s = &s[count_s];
-				return (ptr_s);
+				ps = &s[cs];
+				return (ps);
 			}
-			count_accept++;
+			ca++;
 		}
-		count_s++;
+		cs++;
 	}
 
 	return 0;
