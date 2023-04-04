@@ -20,20 +20,21 @@ unsigned int _strspn(char *s, char *accept)
 	{
 		k = 0;
 
-		while (accept[k + y] != '\0' && s[i + k] != '\0' && accept[k + y] == s[i + k])
+		while (accept[j] != '\0')
 		{
-			if (s[i + k] != accept[k + y])
+			if (s[i] == accept[j])
 			{
+				y++;
 				break;
 			}
 			k++;
 		}
-		if (accept[k + y] == '\0')
+		if (accept[k] == '\0')
 		{
-			return (s + i);
+			break;
 		}
-		k++;
-		i++;	
+		i++;
 	}
-	return (0);
+	
+	return (y);
 }
