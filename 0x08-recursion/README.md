@@ -17,7 +17,8 @@ function1()
 
 int factorial(int x); //declaring the function
 
-void main()
+void main ()
+
 {
     int a, b;
     
@@ -30,7 +31,7 @@ void main()
     printf("%d", b);
 }
 
-int factorial(int x) //defining the function
+int factorial (int x) //defining the function
 
 {
     int r = 1;
@@ -43,7 +44,7 @@ int factorial(int x) //defining the function
     {
         r = x*factorial(x-1); //function calls itself
     }
-    
+
     return r;
 }
 
