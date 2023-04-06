@@ -3,26 +3,23 @@
 /**
  * _sqrt_recursion - returns the natural square root of a number
  * @n: integer number
- * Return: 1 if n has a natural square root, otherwise -1
+ * Return: natural square root of n
  */
 
 int _sqrt_recursion(int n)
 {
-	int sqrt;
+	int counter;
 
-	sqrt = 1;
+	counter = 2; /* 2 is the first non negative prime int*/
 
-	if (n == sqrt * sqrt)
+	if (n <= 1)
 	{
-		return (sqrt);
+		return (0);
 	}
-	else if (sqrt < n)
+	else if (n == 2)
 	{
-		return (_sqrt_recursion(n));
+		return (1);
 	}
-	else
-	{
-		return (-1);
-	}
-	
+
+	return (counter * counter);
 }
