@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h> /*atoi is defined here!*/
 
 int main(int argc, char *argv[])
 {
