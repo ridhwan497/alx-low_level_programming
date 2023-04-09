@@ -13,11 +13,11 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-		for (i = 0; i < argc - 1; i++)
+		for (i = 1; i < argc; i++)
 		{
 			if (isdigit(*argv[i]))
 			{
-				nums = atoi(argv[i + 1]);
+				nums = atoi(argv[i]);
 			}
 			else
 			{
