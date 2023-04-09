@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 		{
 			if (isdigit(*argv[i]))
 			{
-				nums = atoi(argv[[i]]);
+				nums = atoi(argv[i]);
 				sum += nums;
 			}
 			else
