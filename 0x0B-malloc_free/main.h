@@ -11,4 +11,6 @@ char *argstostr(int ac, char **av);
 char **strtow(char *str);
 void simple_print_buffer(char *buffer, unsigned int size);
 void print_grid(int **grid, int width, int height);
+void print_tab(char **tab);
+void ch_free(char **p, unsigned int n);
 #endif
