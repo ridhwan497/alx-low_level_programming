@@ -25,12 +25,12 @@ void ch_free(char **p, unsigned int n)
 char **strtow(char *str)
 {
 	char **aout;
-	unsigned int count , h, size, size2, arr1; 
+	unsigned int count, h, size, size2, arr1;
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
-	for (count  = h = 0; str[count ] != '\0'; count ++)
-		if (str[count ] != ' ' && (str[count  + 1] == ' ' || str[count  + 1] == '\0'))
+	for (count  = h = 0; str[count] != '\0'; count++)
+		if (str[count] != ' ' && (str[count + 1] == ' ' || str[count + 1] == '\0'))
 			h++;
 	aout = malloc((h + 1) * sizeof(char *));
 	if (aout == NULL || h == 0)
@@ -40,13 +40,13 @@ char **strtow(char *str)
 	}
 	for (size = arr1 = 0; size < h; size++)
 	{
-		for (count  = arr1; str[count ] != '\0'; count ++)
+		for (count  = arr1; str[count] != '\0'; count++)
 		{
-			if (str[count ] == ' ')
+			if (str[count] == ' ')
 				arr1++;
-			if (str[count ] != ' ' && (str[count  + 1] == ' ' || str[count  + 1] == '\0'))
+			if (str[count] != ' ' && (str[count + 1] == ' ' || str[count + 1] == '\0'))
 			{
-				aout[size] = malloc((count  - arr1 + 2) * sizeof(char));
+				aout[size] = malloc((count - arr1 + 2) * sizeof(char));
 				if (aout[size] == NULL)
 				{
 					ch_free(aout, size);
