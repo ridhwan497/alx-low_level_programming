@@ -5,9 +5,10 @@
  * struct dog - type of 'dog'
  * @name: name of dog
  * @age: age of dog
- * @owner: owner of dog 
+ * @owner: owner of dog
  */
-struct dog {
+struct dog
+{
 	char *name;
 	float age;
 	char *owner;
