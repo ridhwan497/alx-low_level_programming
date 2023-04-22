@@ -11,31 +11,30 @@
 int main(int argc, char *argv[])
 {
 	int bytes, count;
-
-	char *address;
+	char *arr;
 
 	if (argc != 2)
-	{
-		printf("Error\n");
-		exit(1);
-	}
-
+{
+	printf("Error\n");
+	exit(1);
+}
 	bytes = atoi(argv[1]);
 
 	if (bytes < 0)
-	{
-		printf("Error\n");
-		exit(2);
-	}
-	
+{
+	printf("Error\n");
+	exit(2);
+}
 	arr = (char *)main;
 
 	for (count = 0; count < bytes; count++)
-	{
-		printf("%02hhx", arr[count]);
-		if (count < bytes - 1)
-			printf(" ");
-	}
-	printf("\n");
+{
+	if (count == bytes - 1)
+{
+	printf("%02hhx\n", arr[count]);
+	break;
+}
+	printf("%02hhx ", arr[count]);
+}
 	return (0);
 }
