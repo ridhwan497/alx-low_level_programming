@@ -11,12 +11,12 @@ void print_all(const char * const format, ...)
 	int count;
 	char *string, *separator = "";
 
-	count = 0;
 	/* declare a va_list type variable */
 	va_list list;
 
 	va_start(list, format);
 
+	count = 0;
 	if (format)
 {
 	while (format[count])
@@ -26,7 +26,7 @@ void print_all(const char * const format, ...)
 	case 'c':
 	printf("%s%c", separator, va_arg(list, int));
 	break;
-	case 'count':
+	case 'i':
 	printf("%s%d", separator, va_arg(list, int));
 	break;
 	case 'f':
