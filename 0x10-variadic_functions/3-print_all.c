@@ -10,8 +10,9 @@ void print_all(const char * const format, ...)
 {
 	/* declare a va_list type variable */
 	va_list ap;
-	unsigned int count, flag; /* flag is used to check if a separator is needed */
+	unsigned int count, flag, count2; /* flag is used to check if a separator is needed */
 	char *str;
+	const char t_a[] = "cifs";
 
 	/* initialize ap for n number of arguments */
 	va_start(ap, format);
@@ -22,28 +23,32 @@ void print_all(const char * const format, ...)
 
 	while (format != NULL && format[count] != '\0')
 	{
-		/* check for the type of argument */
-		if(count > 0)
-			printf(", ");
+		count2 = 0;
 
+		/* check for the type of argument */
+		if (format[count] == t_a[count2] && flag)
+		{
+			printf(", ");
+			break;
+
+		} count2++;
 		switch (format[count])
 		{
 			case 'c':
 				printf("%c", va_arg(ap, int)), flag = 1;
 				break;
 			case 'i':
-				if (flag == 1)
+				printf(", ");
 				printf("%d", va_arg(ap, int)), flag = 1;
 				break;
 			case 'f':
-				if (flag == 1)
+				printf(", ");
 				printf("%f", va_arg(ap, double));
 				flag = 1;
 				break;
 			case 's':
-				if (flag == 1)
+				printf(", ");
 				str = va_arg(ap, char *);
-
 				if (str == NULL)
 				{
 					str = "(nil)";
