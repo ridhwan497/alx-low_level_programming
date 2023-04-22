@@ -15,8 +15,10 @@ int sum_them_all(const unsigned int n, ...)
 
 	if (n == 0)
 		return (0);
+
 	/* initialize ap for n number of arguments */
 	va_start(ap, n);
+
 	/* access all the arguments assigned to ap */
 	for (count = 0; count < n; count++)
 		sum += va_arg(ap, int);
