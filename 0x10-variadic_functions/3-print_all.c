@@ -8,56 +8,44 @@
 
 void print_all(const char * const format, ...)
 {
-	/* declare a va_list type variable */
-	va_list ap;
-	unsigned int count, flag, count2; /* flag is used to check if a separator is needed */
-	char *str;
-	const char t_a[] = "cifs";
+	int count;
+	char *string, *separator = "";
 
-	/* initialize ap for n number of arguments */
-	va_start(ap, format);
-
-	/* access all the arguments assigned to ap */
 	count = 0;
-	flag = 0;
+	/* declare a va_list type variable */
+	va_list list;
 
-	while (format != NULL && format[count] != '\0')
-	{
-		count2 = 0;
+	va_start(list, format);
 
-		/* check for the type of argument */
-		if (format[count] == t_a[count2] && flag)
-		{
-			printf(", ");
-			break;
-
-		} count2++;
-		switch (format[count])
-		{
-			case 'c':
-				printf("%c", va_arg(ap, int)), flag = 1;
-				break;
-			case 'i':
-				printf(", ");
-				printf("%d", va_arg(ap, int)), flag = 1;
-				break;
-			case 'f':
-				printf(", ");
-				printf("%f", va_arg(ap, double));
-				flag = 1;
-				break;
-			case 's':
-				printf(", ");
-				str = va_arg(ap, char *);
-				if (str == NULL)
-				{
-					str = "(nil)";
-					break;
-				}
-				printf("%s", str);
-				flag = 1;
-				break;
-		} count++;
-	}
-	printf("\n"), va_end(ap);
+	if (format)
+{
+	while (format[count])
+{
+	switch (format[count])
+{
+	case 'c':
+	printf("%s%c", separator, va_arg(list, int));
+	break;
+	case 'count':
+	printf("%s%d", separator, va_arg(list, int));
+	break;
+	case 'f':
+	printf("%s%f", separator, va_arg(list, double));
+	break;
+	case 's':
+	string = va_arg(list, char *);
+	if (!string)
+	string = "(nil)";
+	printf("%s%s", separator, string);
+	break;
+	default:
+	count++;
+	continue;
+}
+	separator = ", ";
+	count++;
+}
+}
+	printf("\n");
+	va_end(list);
 }
