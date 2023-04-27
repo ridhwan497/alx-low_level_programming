@@ -18,7 +18,7 @@ list_t *add_node_end(list_t **head, const char *str)
 
 	if (create_node == NULL) /* validate if malloc was successful */
 		return (NULL);
-	
+
 	create_node->str = strdup(str); /* duplicate str */
 
 	{
@@ -29,11 +29,13 @@ list_t *add_node_end(list_t **head, const char *str)
 		}
 	}
 
-	length = strlen(create_node->str); /* set len */
+	length = strlen(create_node->str);
+	/* set len */
 	create_node->len = length; /* set len */
 	create_node->next = NULL; /* make next of new node as NULL */
 
-	if (*head == NULL) /* if the Linked List is empty, then make the new node as head */
+	if (*head == NULL)
+	/* if the Linked List is empty, then make the new node as head */
 	{
 		*head = create_node;
 		return (create_node);
