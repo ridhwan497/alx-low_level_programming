@@ -3,7 +3,7 @@
 
 /**
  * This file contains the declarations of the functions that are used to
- * 
+ *
  * in the implementation of the linked lists.
  */
 
@@ -17,7 +17,7 @@
  * @str: string - (malloc'ed string)
  * @len: length of the string
  * @next: points to the next node
- * 
+ *
  * Description: singly linked list node structure
  */
 
@@ -36,4 +36,4 @@ list_t *add_node(list_t **head, const char *str);
 list_t *add_node_end(list_t **head, const char *str);
 void free_list(list_t *head);
 
-#endif /*_LISTS_H_*/ 
+#endif /*_LISTS_H_*/
