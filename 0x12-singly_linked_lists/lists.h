@@ -1,25 +1,19 @@
 #ifndef _LISTS_H_
 #define _LISTS_H_
 
-/**
- * This file contains the declarations of the functions that are used to
- *
- * in the implementation of the linked lists.
- */
 
-/*Libraries*/
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 
 /**
- * struct list_s - singly linked list
- * @str: string - (malloc'ed string)
- * @len: length of the string
- * @next: points to the next node
- *
- * Description: singly linked list node structure
- */
+*struct list_s - typedef for singly linked list
+*@str: string - (malloc'ed string)
+*@len: length of the string
+*@next: points to the next node
+*
+*Description: singly linked list node structure
+*/
 
 typedef struct list_s
 {
