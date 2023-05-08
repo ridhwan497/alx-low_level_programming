@@ -1,6 +1,6 @@
 #include "main.h"
-
-int handle_error(int f_from, int f_to, char *argv[]);
+char *_buffer(char *f_from);
+void _close(int f_from);
 /**
  * main - check the code
  * @argc: argument count
@@ -11,68 +11,81 @@ int handle_error(int f_from, int f_to, char *argv[]);
 int main(int argc, char *argv[])
 {
 	int f_from, f_to;
-	ssize_t read_count, write_count;
 	char *buffer;
-	int _close;
+	int _read, _write;
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "%s\n", "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
-	f_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	buffer = _buffer(argv[2]);
 	f_from = open(argv[1], O_RDONLY);
-	handle_error(f_from, f_to, argv);
+	_read = read(f_from, buffer, 1024);
+	f_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
-	buffer = malloc(sizeof(char) * 1024);
-	if (buffer == NULL)
-		return (-1);
-
-	read_count = read(f_from, buffer, 1024);
-	if (read_count == -1)
-		handle_error(0, -1, argv);
-	write_count = write(f_to, buffer, read_count);
-	if (write_count == -1)
-		handle_error(0, -1, argv);
+	do
+	{
+		if (f_from == -1 || _read == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+			free(buffer);
+			exit(98);
+		}
+		_write = write(f_to, buffer, _read);
+		if (f_to == -1 || _write == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			free(buffer);
+			exit(99);
+		}
+		_read = read(f_from, buffer, 1024);
+		f_to = open(argv[2], O_WRONLY | O_APPEND);
+	} while (_read > 0);
 
 	free(buffer);
-
-	_close = close(f_from);
-	if (_close == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", f_from);
-		exit(100);
-	}
-	_close = close(f_to);
-	if (_close == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", f_to);
-		exit(100);
-	}
+	_close(f_from);
+	_close(f_to);
 
 	return (0);
 }
 
 /**
- * handle_error - handles errors
- * @f_from: file from
- * @f_to: file to
- * @argv: argument vector
- * Return: 0
+ *_close - close file
+ *@f_from: file from
  */
 
-int handle_error(int f_from, int f_to, char *argv[])
+void _close(int f_from)
 {
-	if (f_from == -1)
+	int close_from;
+
+	close_from = close(f_from);
+
+	if (close_from == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", f_from);
+		exit(100);
 	}
-	if (f_to == -1)
+}
+
+/**
+ * _buffer - buffer
+ * @f_from: file from
+ * Return: buffer
+ */
+
+char *_buffer(char *f_from)
+{
+	char *buffer;
+
+	buffer = malloc(sizeof(char) * 1024);
+
+	if (buffer == NULL)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", f_from);
 		exit(99);
 	}
-	return (0);
+
+	return (buffer);
 }
