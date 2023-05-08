@@ -25,8 +25,7 @@ int main(int argc, char *argv[])
 	_read = read(f_from, buffer, 1024);
 	f_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
-	do
-	{
+	do {
 		if (f_from == -1 || _read == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
