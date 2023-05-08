@@ -6,6 +6,7 @@
 #include <fcntl.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <stdio.h>
 
 /*Prototypes*/
 int _putchar(char c);
