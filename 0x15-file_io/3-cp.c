@@ -13,10 +13,11 @@ int main(int argc, char *argv[])
 	int f_from, f_to;
 	ssize_t read_count, write_count;
 	char *buffer;
+	int _close;
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "%s\n", "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
@@ -27,26 +28,29 @@ int main(int argc, char *argv[])
 	buffer = malloc(sizeof(char) * 1024);
 	if (buffer == NULL)
 		return (-1);
-	
+
 	read_count = read(f_from, buffer, 1024);
 	if (read_count == -1)
 		handle_error(0, -1, argv);
 	write_count = write(f_to, buffer, read_count);
 	if (write_count == -1)
 		handle_error(0, -1, argv);
-	
+
 	free(buffer);
 
-	if (close(f_from) == -1)
+	_close = close(f_from);
+	if (_close == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", f_from);
 		exit(100);
 	}
-	if (close(f_to) == -1)
+	_close = close(f_to);
+	if (_close == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", f_to);
 		exit(100);
 	}
+
 	return (0);
 }
 
